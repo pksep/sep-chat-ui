@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 4,
+  "revision": "sep-2.0.0-v4-profile-example-1",
+  "enabled": true,
+  "minVersionCode": 20001,
+  "expiresAtEpochSeconds": 1893456000,
+  "config": {
+    "emojiRecentLimit": 24,
+    "showEmojiRecents": true,
+    "showStickerRecents": true
+  },
+  "theme": {},
+  "components": {
+    "chats.chat_profile_screen": {
+      "body": [
+        {
+          "type": "Native"
+        },
+        {
+          "type": "Scene",
+          "props": {
+            "id": "tools"
+          }
+        }
+      ]
+    }
+  },
+  "runtime": {
+    "permissions": [
+      "profile.qr",
+      "profile.status",
+      "api.topics.refresh"
+    ],
+    "state": {
+      "status": "",
+      "icon": "",
+      "result": ""
+    },
+    "actions": {
+      "qr": {
+        "type": "invoke",
+        "capability": "profile.qr"
+      },
+      "open": {
+        "type": "dialog",
+        "target": "status"
+      },
+      "save": {
+        "type": "invoke",
+        "capability": "profile.status",
+        "args": {
+          "text": {
+            "bind": "state.status"
+          },
+          "icon": {
+            "bind": "state.icon"
+          }
+        },
+        "resultKey": "result"
+      },
+      "close": {
+        "type": "dismiss"
+      },
+      "saveAndClose": {
+        "type": "sequence",
+        "steps": [
+          "save",
+          "close"
+        ]
+      },
+      "refresh": {
+        "type": "invoke",
+        "capability": "api.topics.refresh"
+      }
+    },
+    "views": {
+      "tools": [
+        {
+          "type": "column",
+          "props": {
+            "gap": 10,
+            "style": {
+              "fillWidth": true,
+              "padding": 16
+            }
+          },
+          "children": [
+            {
+              "type": "button",
+              "props": {
+                "text": "Авторизоваться через QR",
+                "icon": "qr",
+                "variant": "row",
+                "action": "qr"
+              }
+            },
+            {
+              "type": "button",
+              "props": {
+                "text": "Изменить статус",
+                "icon": "settings",
+                "variant": "outlined",
+                "action": "open"
+              }
+            },
+            {
+              "type": "button",
+              "props": {
+                "text": "Обновить чаты",
+                "variant": "text",
+                "action": "refresh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialogs": {
+      "status": [
+        {
+          "type": "text",
+          "props": {
+            "text": "Статус профиля",
+            "bold": true,
+            "fontSize": 18
+          }
+        },
+        {
+          "type": "textfield",
+          "props": {
+            "key": "status",
+            "label": "Текст статуса",
+            "maxLength": 40,
+            "style": {
+              "fillWidth": true
+            }
+          }
+        },
+        {
+          "type": "textfield",
+          "props": {
+            "key": "icon",
+            "label": "Эмодзи",
+            "maxLength": 16
+          }
+        },
+        {
+          "type": "button",
+          "props": {
+            "text": "Сохранить",
+            "action": "saveAndClose"
+          }
+        }
+      ]
+    }
+  },
+  "screens": {}
+}
