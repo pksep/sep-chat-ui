@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 3,
+  "revision": "sep-2.0.0-native-rollback-1",
+  "enabled": false,
+  "minVersionCode": 20000,
+  "expiresAtEpochSeconds": 1893456000,
+  "components": {},
+  "screens": {}
+}

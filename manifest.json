@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 3,
+  "revision": "sep-2.0.0-baseline-1",
+  "enabled": true,
+  "minVersionCode": 20000,
+  "expiresAtEpochSeconds": 1893456000,
+  "config": {
+    "emojiRecentLimit": 24,
+    "showEmojiRecents": true,
+    "showStickerRecents": true
+  },
+  "theme": {},
+  "components": {},
+  "screens": {}
+}

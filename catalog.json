@@ -1,0 +1,1332 @@
+{
+  "schemaVersion": 3,
+  "minimumVersionCode": 20000,
+  "components": {
+    "auth.auth_screen": {
+      "bindings": [
+        "loading"
+      ],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "auth.organization_card": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "auth.credentials_card": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "auth.auth_input": {
+      "bindings": [
+        "placeholder",
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {
+        "placeholder": "Text",
+        "fontSize": "Dimension"
+      }
+    },
+    "auth.auth_button": {
+      "bindings": [
+        "text",
+        "enabled"
+      ],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {
+        "text": "Text"
+      }
+    },
+    "auth.auth_login_directory": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "auth.auth_error_notification": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_activity_panel": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_automation_row": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_automation_menu": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "chats.ai_composer": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_approval_buttons": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_decision_dialog": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_conversation_menu": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "chats.ai_input_composer": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_landing": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_new_panel": {
+      "bindings": [],
+      "actions": [
+        "back"
+      ],
+      "properties": {}
+    },
+    "chats.ai_mode_controls": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_history_toolbar": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_message_menu": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.ai_panel": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.ai_history_panel": {
+      "bindings": [],
+      "actions": [
+        "back",
+        "retry"
+      ],
+      "properties": {}
+    },
+    "chats.ai_voice_panel": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.avatar_crop_dialog": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.call_topic_intro": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.call_topic_actions": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_connection_status": {
+      "bindings": [
+        "label"
+      ],
+      "actions": [],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "chats.chat_folder_manager_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_folder_editor_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "chats.chat_folder_details_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "chats.chat_create_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.chat_folder_rail": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.folder_rail_item": {
+      "bindings": [
+        "label",
+        "selected",
+        "enabled",
+        "description"
+      ],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "chats.chat_unread_badge": {
+      "bindings": [
+        "count"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_bottom_navigation": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_topic_filter_button": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_list_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_list_toolbar": {
+      "bindings": [
+        "title"
+      ],
+      "actions": [],
+      "properties": {
+        "title": "Text"
+      }
+    },
+    "chats.chat_list_row": {
+      "bindings": [
+        "preview",
+        "showOnline",
+        "showTyping",
+        "title",
+        "unreadCount",
+        "online"
+      ],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {}
+    },
+    "chats.chat_list_skeleton": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.chat_profile_screen": {
+      "bindings": [
+        "displayName"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.profile_row": {
+      "bindings": [],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {
+        "height": "Dimension"
+      }
+    },
+    "chats.chat_topic_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_topic_actions_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.client_details_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.clients_panel": {
+      "bindings": [],
+      "actions": [
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.composer_context_menu": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.composer_formatting_toolbar": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.composer_input_field": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_attachment_chooser": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_camera_chooser": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_attachment_preview": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_bot_commands": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_composer": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_delete_confirmation": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_confirmation_sheet": {
+      "bindings": [
+        "title",
+        "description",
+        "busy"
+      ],
+      "actions": [],
+      "properties": {
+        "title": "Text"
+      }
+    },
+    "chats.conversation_delete_notices": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_edit_notice": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_emoji_body": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_emoji_picker": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_file_attachment": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_file_icon": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_floating_date": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_header": {
+      "bindings": [
+        "title",
+        "online"
+      ],
+      "actions": [
+        "onBack",
+        "onOpenProfile"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_header_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_media_body": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_media_grid": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_media_skeleton": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_mention_picker": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_message_author_meta": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_message_context_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.message_menu_row": {
+      "bindings": [
+        "text",
+        "enabled"
+      ],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_message_delivery_icon": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.vue_message_delivery_icon": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.vue_message_tail": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_noto_emoji": {
+      "bindings": [],
+      "actions": [],
+      "properties": {
+        "size": "Dimension"
+      }
+    },
+    "chats.conversation_picker_popup": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_pinned_banner": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_pin_confirmation": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_pin_confirmation_overlay": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_pin_notices": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_quote_body": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_quote_highlight_body": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_reaction_chips": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_reaction_notices": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_reaction_picker": {
+      "bindings": [],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_read_details": {
+      "bindings": [],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_reply_preview": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_composer_reply_action": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_composer_edit_action": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_reference_return_button": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onOpenProfile"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_scroll_buttons": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_selection_row": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_skeleton": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_sticker_body": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_sticker_picker": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_system_notice": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_call_message": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_system_pin_menu": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_text_message": {
+      "bindings": [],
+      "actions": [
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.message_content_with_inline_metadata": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_upload_message": {
+      "bindings": [],
+      "actions": [
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.conversation_video_preview": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_video_fallback_poster": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_video_viewer_chrome": {
+      "bindings": [
+        "itemIndex",
+        "itemCount"
+      ],
+      "actions": [
+        "onBack"
+      ],
+      "properties": {}
+    },
+    "chats.favorite_history_overlay": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.group_info_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.group_info_member_skeleton": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.group_members_picker_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_body_text": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_composer_forward_action": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.conversation_forwarded_header": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_forward_notices": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_forward_review_dialog": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_forward_recipient_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.forward_recipient_picker": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_search_header_row": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "chats.message_search_controls": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "chats.message_selection_toolbar": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_row_surface": {
+      "bindings": [
+        "selected"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_touch_overlay": {
+      "bindings": [
+        "selected",
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_checkbox": {
+      "bindings": [
+        "selected",
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_context_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.message_selection_delete_dialog": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_delete_overlay": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.message_selection_range_touch_overlay": {
+      "bindings": [
+        "selected",
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.new_chat_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.directory_row": {
+      "bindings": [],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {}
+    },
+    "chats.native_directory_input": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {
+        "height": "Dimension",
+        "background": "Color"
+      }
+    },
+    "chats.other_user_profile_screen": {
+      "bindings": [],
+      "actions": [
+        "onBack",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.photo_editor": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.profile_attachment_menu": {
+      "bindings": [],
+      "actions": [
+        "onDismiss"
+      ],
+      "properties": {}
+    },
+    "chats.profile_attachments_panel": {
+      "bindings": [],
+      "actions": [
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.profile_gallery_action_overlay": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.sticker_picker_content": {
+      "bindings": [],
+      "actions": [
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "chats.sticker_picker_modes": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.topic_active_call": {
+      "bindings": [
+        "title"
+      ],
+      "actions": [],
+      "properties": {
+        "title": "Text"
+      }
+    },
+    "chats.topic_preview_fade": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.topic_message_preview": {
+      "bindings": [
+        "preview"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.user_typing_indicator": {
+      "bindings": [
+        "label"
+      ],
+      "actions": [],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "chats.wallpaper_settings": {
+      "bindings": [
+        "selected",
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "chats.wallpaper_preview_sheet": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.audio_call_screen": {
+      "bindings": [
+        "presenceNotice",
+        "title",
+        "status"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_controls": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_time": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.minimized_audio_call": {
+      "bindings": [],
+      "actions": [
+        "onClick"
+      ],
+      "properties": {}
+    },
+    "calls.call_background_settings": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_background_options": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_background_preview": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.call_header_button": {
+      "bindings": [
+        "description",
+        "enabled"
+      ],
+      "actions": [
+        "click"
+      ],
+      "properties": {
+        "iconSize": "Dimension",
+        "background": "Color",
+        "tint": "Color"
+      }
+    },
+    "calls.call_network_notice": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_audio_popup": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.call_audio_option": {
+      "bindings": [
+        "label"
+      ],
+      "actions": [
+        "click"
+      ],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "calls.call_history_search": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.meeting_actions_popup": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.call_history_search_empty": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_history_list": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_info_panel": {
+      "bindings": [],
+      "actions": [
+        "close"
+      ],
+      "properties": {}
+    },
+    "calls.call_info_panel_content": {
+      "bindings": [],
+      "actions": [
+        "close"
+      ],
+      "properties": {}
+    },
+    "calls.call_interaction_button": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_group_menu": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_more_popup": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.call_connection_indicator": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_materials_panel": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.call_microphone_icon": {
+      "bindings": [
+        "enabled",
+        "description"
+      ],
+      "actions": [],
+      "properties": {
+        "tint": "Color"
+      }
+    },
+    "calls.call_participants": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_participant_strip": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_reaction_overlay": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_terminal_controls": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.call_video_overlay": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "calls.meeting_invite_layout": {
+      "bindings": [
+        "label"
+      ],
+      "actions": [],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "calls.meeting_invite_banner": {
+      "bindings": [
+        "label"
+      ],
+      "actions": [],
+      "properties": {
+        "label": "Text"
+      }
+    },
+    "calls.meeting_invite_error_overlay": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "calls.meeting_invite_error_card": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "calls.meetings_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_call_materials_panel": {
+      "bindings": [],
+      "actions": [
+        "dismiss"
+      ],
+      "properties": {}
+    },
+    "app.native_meetings_page": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_meeting_frame": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.attachment_photo_camera": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "app.attachment_photo_screen": {
+      "bindings": [],
+      "actions": [
+        "onRetry",
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "app.zoomable_media_page": {
+      "bindings": [],
+      "actions": [
+        "onClose"
+      ],
+      "properties": {}
+    },
+    "app.native_ai_page": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_vpn_warning": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_push_permission": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.qr_camera_preview": {
+      "bindings": [
+        "enabled"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "app.qr_scanner_screen": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [
+        "onClose",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "app.qr_scanner_frame": {
+      "bindings": [
+        "busy"
+      ],
+      "actions": [
+        "onClose",
+        "onRetry"
+      ],
+      "properties": {}
+    },
+    "app.incoming_share_destination_screen": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_app_update_button": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_profile_app_update": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.profile_app_update": {
+      "bindings": [
+        "version"
+      ],
+      "actions": [
+        "onCheck"
+      ],
+      "properties": {}
+    },
+    "app.profile_update_progress": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_call_background_settings": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_conversation_wallpaper": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "app.native_wallpaper_settings": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    },
+    "design.chat_brand_mark": {
+      "bindings": [],
+      "actions": [],
+      "properties": {
+        "size": "Dimension"
+      }
+    },
+    "design.chat_avatar": {
+      "bindings": [
+        "title"
+      ],
+      "actions": [],
+      "properties": {
+        "title": "Text",
+        "size": "Dimension"
+      }
+    },
+    "design.chat_empty_state": {
+      "bindings": [
+        "title",
+        "description"
+      ],
+      "actions": [],
+      "properties": {
+        "title": "Text"
+      }
+    },
+    "design.chat_inline_notice": {
+      "bindings": [
+        "text"
+      ],
+      "actions": [],
+      "properties": {}
+    },
+    "design.profile_section_chevron": {
+      "bindings": [],
+      "actions": [],
+      "properties": {}
+    }
+  }
+}

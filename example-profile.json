@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 3,
+  "revision": "sep-profile-example-1",
+  "enabled": true,
+  "minVersionCode": 20000,
+  "expiresAtEpochSeconds": 1893456000,
+  "components": {
+    "chats.profile_row": {
+      "properties": {
+        "height": 48
+      },
+      "body": [
+        {
+          "type": "Native"
+        }
+      ]
+    },
+    "app.profile_app_update": {
+      "body": [
+        {
+          "type": "Native"
+        },
+        {
+          "type": "Button",
+          "props": {
+            "text": "Проверить обновление",
+            "action": "onCheck"
+          }
+        }
+      ]
+    }
+  },
+  "screens": {}
+}
