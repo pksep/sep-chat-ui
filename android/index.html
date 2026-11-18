@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>Скачать SEP Chat для Android</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { margin: 0; min-height: 100dvh; display: grid; place-items: center; }
+      main { max-width: 360px; padding: 24px; text-align: center; }
+      h1 { font-size: 22px; } p { line-height: 1.5; }
+      a, button { display: inline-block; padding: 12px 20px; border: 0; border-radius: 8px; font: inherit; background: #2675ed; color: white; text-decoration: none; cursor: pointer; }
+      [hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>SEP Chat для Android</h1>
+      <p id="status" role="status">Подготавливаем скачивание последней APK…</p>
+      <a id="download" hidden rel="noreferrer">Скачать APK</a>
+      <button id="retry" hidden type="button">Повторить</button>
+      <noscript>Для получения ссылки на APK включите JavaScript.</noscript>
+    </main>
+    <script>
+      const status = document.getElementById('status');
+      const link = document.getElementById('download');
+      const retry = document.getElementById('retry');
+      async function load() {
+        retry.hidden = true;
+        link.hidden = true;
+        status.textContent = 'Подготавливаем скачивание последней APK…';
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        try {
+          const response = await fetch('../android-download.json', {
+            credentials: 'omit', cache: 'no-store', redirect: 'error', signal: controller.signal
+          });
+          if (!response.ok || Number(response.headers.get('content-length')) > 4096) throw new Error();
+          const text = await response.text();
+          if (text.length > 4096) throw new Error();
+          const config = JSON.parse(text);
+          if (config.schemaVersion !== 1 || config.enabled !== true || typeof config.apkUrl !== 'string' || config.apkUrl.length > 2048) throw new Error();
+          const url = new URL(config.apkUrl);
+          if (url.protocol !== 'https:' || url.username || url.password || url.hash) throw new Error();
+          link.href = url.href;
+          link.hidden = false;
+          status.textContent = 'Если скачивание не началось, нажмите «Скачать APK».';
+          location.replace(url.href);
+        } catch {
+          status.textContent = 'Не удалось получить ссылку. Проверьте интернет и повторите.';
+          retry.hidden = false;
+        } finally { clearTimeout(timeout); }
+      }
+      retry.addEventListener('click', load);
+      void load();
+    </script>
+  </body>
+</html>
