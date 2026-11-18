@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "revision": "sep-2.0.0-v4-android-download-1",
+  "revision": "sep-2.0.0-v4-safe-native-2",
   "enabled": true,
   "minVersionCode": 20001,
   "expiresAtEpochSeconds": 1893456000,
@@ -10,80 +10,7 @@
     "showStickerRecents": true
   },
   "theme": {},
-  "components": {
-    "app.profile_qr_row": {
-      "body": [
-        {
-          "type": "Native"
-        },
-        {
-          "type": "Spacer",
-          "props": {
-            "height": 10
-          }
-        },
-        {
-          "type": "Scene",
-          "props": {
-            "id": "androidDownloadTrigger"
-          }
-        }
-      ]
-    }
-  },
-  "runtime": {
-    "actions": {
-      "openAndroidDownload": {
-        "type": "dialog",
-        "target": "androidDownload"
-      }
-    },
-    "views": {
-      "androidDownloadTrigger": [
-        {
-          "type": "button",
-          "props": {
-            "text": "??????? Android-??????????",
-            "icon": "qr",
-            "variant": "row",
-            "action": "openAndroidDownload",
-            "testId": "AndroidDownloadTrigger"
-          }
-        }
-      ]
-    },
-    "dialogs": {
-      "androidDownload": [
-        {
-          "type": "text",
-          "props": {
-            "text": "SEP Chat ??? Android",
-            "bold": true,
-            "fontSize": 16
-          }
-        },
-        {
-          "type": "image",
-          "props": {
-            "src": "https://pksep.github.io/sep-chat-ui/assets/android-download.png",
-            "description": "QR-??? ??? ?????????? SEP Chat ?? Android",
-            "fit": true,
-            "style": {
-              "fillWidth": true,
-              "height": 232
-            }
-          }
-        },
-        {
-          "type": "text",
-          "props": {
-            "text": "???????????? QR-??? ??????? ????????, ????? ??????? ????????? APK.",
-            "fontSize": 14,
-            "maxLines": 4
-          }
-        }
-      ]
-    }
-  },
+  "components": {},
+  "runtime": {},
   "screens": {}
 }
