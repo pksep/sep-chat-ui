@@ -22,10 +22,13 @@ V4 добавляет формы, состояние, шаблоны/списк�
 
 Полный контракт: [CONTRACT_V4.md](CONTRACT_V4.md).
 
-### Скачать Android-приложение: QR и ссылка без новой APK
+### Скачать Android-приложение: QR и ссылка без новой APK после 20002
 
-Для сборки 20001 кнопка профиля и QR-окно опубликованы через `manifest-v4.json`.
-Пересборка Android для изменения подписи, окна, QR или ссылки не нужна.
+Для сборки 20002 кнопка профиля и QR-окно опубликованы через `manifest-v4-20002.json`.
+В 20001 физическая проверка обнаружила ошибку закрытия TLS на Main при уходе
+с экрана с удалённой картинкой. Старый `manifest-v4.json` возвращён к Native.
+20002 исправляет освобождение HTTP-ресурсов; после этого однократного обновления
+для изменения подписи, окна, QR или ссылки пересборка Android не нужна.
 
 - Адрес скачивания меняется в [android-download.json](android-download.json), поле `apkUrl`.
 - По умолчанию это последний публичный выпуск: `https://github.com/pksep/sep-chat-ui/releases/latest/download/SEP-Chat.apk`.
@@ -34,7 +37,7 @@ V4 добавляет формы, состояние, шаблоны/списк�
   или замена ссылки не требуют менять уже показанный/сохранённый QR.
 - Изображение QR: `assets/android-download.png`. Для замены на другое изображение
   менять `qrImageUrl` в download JSON (веб) и
-  `runtime.dialogs.androidDownload[1].props.src` в v4 manifest (Android).
+  `runtime.dialogs.androidDownload[1].props.src` в manifest-v4-20002.json (Android).
 - Название кнопки: `runtime.views.androidDownloadTrigger[0].props.text`.
   Содержимое окна: `runtime.dialogs.androidDownload`. Повысить `revision` manifest.
 - `enabled: false` в download JSON прекращает выдачу ссылки; чтобы убрать кнопку
