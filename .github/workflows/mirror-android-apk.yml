@@ -1,0 +1,66 @@
+name: Mirror Android APK
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Последний опубликованный Android-тег; пусто — определить автоматически'
+        required: false
+        type: string
+      check_only:
+        description: 'Проверить опубликованный выпуск без загрузки в хранилище'
+        default: false
+        type: boolean
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: android-download-publication
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'android-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Проверить логику публикации
+        run: python -m unittest discover -s tools -p 'test_*.py' -v
+      - name: Установить SDK хранилища
+        if: inputs.check_only != true
+        run: python -m pip install -r tools/requirements-android-downloads.txt
+      - name: Загрузить и проверить APK, переключить публичные ссылки
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          CHECK_ONLY: ${{ inputs.check_only }}
+          ANDROID_S3_ENDPOINT: ${{ vars.ANDROID_S3_ENDPOINT }}
+          ANDROID_S3_BUCKET: ${{ vars.ANDROID_S3_BUCKET }}
+          ANDROID_DOWNLOAD_PUBLIC_BASE_URL: ${{ vars.ANDROID_DOWNLOAD_PUBLIC_BASE_URL }}
+          ANDROID_S3_ACCESS_KEY_ID: ${{ secrets.ANDROID_S3_ACCESS_KEY_ID }}
+          ANDROID_S3_SECRET_ACCESS_KEY: ${{ secrets.ANDROID_S3_SECRET_ACCESS_KEY }}
+        run: |
+          args=(--result mirror-result.json)
+          if [ -n "$RELEASE_TAG" ]; then args+=(--release-tag "$RELEASE_TAG"); fi
+          if [ "$CHECK_ONLY" = "true" ]; then args+=(--check-only); fi
+          python tools/mirror_android_apk.py "${args[@]}"
+      - name: Сохранить проверенную ссылку в отчёте
+        if: inputs.check_only != true
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          result = json.load(open('mirror-result.json'))
+          print('APK проверена и опубликована: ' + result['apkUrl'])
+          print('\nSHA-256: `' + result['sha256'] + '`')
+          PY
