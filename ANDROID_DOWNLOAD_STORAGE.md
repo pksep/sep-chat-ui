@@ -21,6 +21,18 @@ Workflow GitHub **Mirror Android APK отключён**. Не добавлять
 После проверки публичной копии QR-конфигурация и GitHub native-feed переключаются
 на серверные адреса без пересборки клиентов.
 
+23 ноября `android-download.json` переключён на постоянный адрес MinIO, изменение
+подтверждено в публичном Pages JSON. Существующая картинка QR сохранена.
+Описание `android-update.json` текущего GitHub Release заменено на содержимое
+серверного `android/latest.json`, версионный адрес JSON и GitHub digest проверены.
+`releases/latest/download/android-update.json` может временно возвращать предыдущую
+копию через кеш редиректов; package name, versionCode, размер и SHA-256 совпадают.
+
+Для следующих выпусков после ручного pipeline GitLab также проверить полный
+публичный SHA-256 и обновить маленький `android-update.json` соответствующего
+GitHub Release содержимым MinIO `android/latest.json`. Постоянную ссылку QR
+переписывать для каждого выпуска не требуется.
+
 ## Исходный workflow GitHub — отключён
 
 Готовая проверенная APK остаётся в GitHub Releases как исходный артефакт.
