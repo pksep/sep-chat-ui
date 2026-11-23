@@ -1,5 +1,28 @@
 # Раздача Android APK с серверов СЭП
 
+## Текущая публикация: GitLab
+
+23 ноября DevOps настроил хранилище и перенёс секреты публикации в GitLab,
+проект [github-mirror/sep-chat-ui](https://gitlab-dev.pksep.ru/github-mirror/sep-chat-ui).
+Запуск пока ручной: ветка `main`,
+переменная `PUBLISH_ANDROID=true`. Переданный DevOps постоянный адрес:
+`https://minio-cloud.pksep.ru/sep-chat-downloads/android/SEP-Chat.apk`.
+GitHub остаётся источником готовой APK и хостингом Pages.
+
+Первая успешная публикация:
+[pipeline №7676](https://gitlab-dev.pksep.ru/github-mirror/sep-chat-ui/-/pipelines/7676).
+Публичная APK 2.0.0/20002 скачана целиком (144 698 665 байт), SHA-256 совпал
+с исходным `ff25047517a56228694897a89bed89e16f2aac6b1c2d09f0a85092bdd65e7549`.
+Проверена докачка: Range отвечает 206 и возвращает запрошенный диапазон.
+
+Workflow GitHub **Mirror Android APK отключён**. Не добавлять в GitHub ключи S3
+и не включать его автоматически. Инструкция настройки GitHub ниже сохранена
+как описание исходного процесса; активная публикация выполняется в GitLab.
+После проверки публичной копии QR-конфигурация и GitHub native-feed переключаются
+на серверные адреса без пересборки клиентов.
+
+## Исходный workflow GitHub — отключён
+
 Готовая проверенная APK остаётся в GitHub Releases как исходный артефакт.
 Workflow `Mirror Android APK` копирует её в отдельный публичный MinIO bucket.
 Ручной запуск: Actions → Mirror Android APK → Run workflow. После настройки

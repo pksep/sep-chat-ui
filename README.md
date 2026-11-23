@@ -29,7 +29,7 @@ V4 добавляет формы, состояние, шаблоны/списк�
 не нужна. Изображение QR и адрес APK читаются из общего удалённого config ниже.
 
 - Адрес скачивания меняется в [android-download.json](android-download.json), поле `apkUrl`.
-- По умолчанию это последний публичный выпуск: `https://github.com/pksep/sep-chat-ui/releases/latest/download/SEP-Chat.apk`.
+- APK раздаётся с серверов СЭП: `https://minio-cloud.pksep.ru/sep-chat-downloads/android/SEP-Chat.apk`.
 - QR кодирует постоянный адрес `https://pksep.github.io/sep-chat-ui/android/`.
   Страница читает актуальный `apkUrl` и начинает скачивание. Новая версия APK
   или замена ссылки не требуют менять уже показанный/сохранённый QR.
@@ -37,7 +37,7 @@ V4 добавляет формы, состояние, шаблоны/списк�
   менять `qrImageUrl` в download JSON.
 - `enabled: false` в download JSON прекращает выдачу ссылки.
 
-Автоматическая раздача APK из собственного MinIO описана в
+Раздача APK из собственного MinIO и ручной запуск публикации в GitLab описаны в
 [ANDROID_DOWNLOAD_STORAGE.md](ANDROID_DOWNLOAD_STORAGE.md). Переключение ссылки
 выполняется только после загрузки и проверки публичной копии APK.
 

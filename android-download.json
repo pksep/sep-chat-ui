@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": "android-download-20001-1",
+  "revision": "android-download-20002-server-1",
   "enabled": true,
-  "apkUrl": "https://github.com/pksep/sep-chat-ui/releases/latest/download/SEP-Chat.apk",
+  "apkUrl": "https://minio-cloud.pksep.ru/sep-chat-downloads/android/SEP-Chat.apk",
   "qrImageUrl": "https://pksep.github.io/sep-chat-ui/assets/android-download.png"
 }
