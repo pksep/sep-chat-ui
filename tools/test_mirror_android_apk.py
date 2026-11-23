@@ -24,6 +24,9 @@ class FakeStorage:
             raise MissingObject()
         return {'Body': io.BytesIO(self.files[Key]['body'])}
 
+    def list_objects_v2(self, Bucket, Prefix, MaxKeys):
+        return {'Contents': [{'Key': key} for key in sorted(self.files) if key.startswith(Prefix)][:MaxKeys]}
+
     def head_object(self, Bucket, Key):
         if Key not in self.files:
             raise MissingObject()

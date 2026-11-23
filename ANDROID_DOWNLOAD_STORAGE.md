@@ -13,8 +13,8 @@ Workflow `Mirror Android APK` копирует её в отдельный пуб
 
 - анонимный `s3:GetObject` только для `sep-chat-downloads/android/*`;
 - пользователь публикации: `s3:GetObject` и `s3:PutObject` только для `android/*`;
-- для ответа 404 на отсутствующий объект может понадобиться `s3:ListBucket`,
-  ограниченный префиксом `android/`;
+- `s3:ListBucket`, ограниченный условием `s3:prefix = android/*`, чтобы отличать
+  отсутствующий объект от запрета доступа; скрипт всегда передаёт этот prefix;
 - существующие bucket с переписками и их политики не менять.
 
 В репозитории **pksep/sep-chat-ui** добавить GitHub Actions Secrets:

@@ -120,13 +120,16 @@ def storage_client():
     return client, bucket, base
 
 
+def object_exists(client, bucket, key):
+    # Явный prefix работает с ListBucket, ограниченным только android/*.
+    result = client.list_objects_v2(Bucket=bucket, Prefix=key, MaxKeys=1)
+    return any(item['Key'] == key for item in result.get('Contents', []))
+
+
 def stored_json(client, bucket, key):
-    try:
-        result = client.get_object(Bucket=bucket, Key=key)
-    except Exception as error:
-        if getattr(error, 'response', {}).get('Error', {}).get('Code') in ('NoSuchKey', '404', 'NotFound'):
-            return None
-        raise
+    if not object_exists(client, bucket, key):
+        return None
+    result = client.get_object(Bucket=bucket, Key=key)
     with result['Body'] as body:
         data = body.read(MAX_JSON_BYTES + 1)
     if len(data) > MAX_JSON_BYTES:
@@ -151,12 +154,7 @@ def publish_storage(client, bucket, base, release, manifest, apk_path, check_lat
     version_key = f"android/releases/{release['tag_name']}/{APK_NAME}"
     version_url = f'{base}/{version_key}'
     # Бинарники по версии неизменяемы; приложение проверяет их SHA-256 перед установкой.
-    try:
-        existing = client.head_object(Bucket=bucket, Key=version_key)
-    except Exception as error:
-        if getattr(error, 'response', {}).get('Error', {}).get('Code') not in ('NoSuchKey', '404', 'NotFound'):
-            raise
-        existing = None
+    existing = client.head_object(Bucket=bucket, Key=version_key) if object_exists(client, bucket, version_key) else None
     metadata = {'sha256': manifest['sha256'], 'version-code': str(manifest['versionCode'])}
     if existing:
         if existing['ContentLength'] != manifest['bytes'] or existing.get('Metadata', {}).get('sha256') != manifest['sha256']:
